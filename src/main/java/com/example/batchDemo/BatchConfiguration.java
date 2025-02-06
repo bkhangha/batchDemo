@@ -7,6 +7,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemProcessor;
@@ -72,6 +73,7 @@ public class BatchConfiguration {
     public Job createEmployeeJob(JobRepository jobRepository, EmpJobExecutionListener listener, Step step1) {
         return new JobBuilder("createEmployeeJob", jobRepository)
                 .incrementer(new UniqueJobIncrementer())
+//                .incrementer(new RunIdIncrementer())
                 .listener(listener)
                 .flow(step1)
                 .end()
