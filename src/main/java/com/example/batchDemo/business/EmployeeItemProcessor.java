@@ -1,4 +1,4 @@
-package com.example.batchDemo;
+package com.example.batchDemo.business;
 
 import com.example.batchDemo.model.Employee;
 import com.example.batchDemo.model.Profile;

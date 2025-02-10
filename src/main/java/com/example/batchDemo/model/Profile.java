@@ -4,10 +4,13 @@ public class Profile {
     private long empCode;
     private String empName;
     private String profileName;
+    private double amount;
+
     public Profile(long empCode, String empName, String profileName) {
         this.empCode = empCode;
         this.empName = empName;
         this.profileName = profileName;
+//        this.amount = amount;
     }
 
     public long getEmpCode() {
@@ -33,4 +36,12 @@ public class Profile {
     public void setProfileName(String profileName) {
         this.profileName = profileName;
     }
+
+//    public double getAmount() {
+//        return amount;
+//    }
+//
+//    public void setAmount(double amount) {
+//        this.amount = amount;
+//    }
 }
