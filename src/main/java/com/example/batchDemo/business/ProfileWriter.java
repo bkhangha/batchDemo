@@ -20,9 +20,7 @@ public class ProfileWriter implements ItemWriter<Profile> {
 
     private final JdbcBatchItemWriter<Profile> jdbcBatchItemWriter;
 
-    public ProfileWriter(@Qualifier("salaryDataSource")  DataSource dataSource) {
-        System.out.println("DataSource: " + dataSource);
-
+    public ProfileWriter(DataSource dataSource) {
         this.jdbcBatchItemWriter = new JdbcBatchItemWriterBuilder<Profile>()
                 .sql("INSERT INTO profile (emp_code, emp_name, profile_name) VALUES (:empCode, :empName, :profileName)")
                 .dataSource(dataSource)
