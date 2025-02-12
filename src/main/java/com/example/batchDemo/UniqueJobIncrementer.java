@@ -11,7 +11,7 @@ public class UniqueJobIncrementer implements JobParametersIncrementer {
     public JobParameters getNext(JobParameters parameters) {
         return new JobParametersBuilder(parameters)
                 .addString("run.id", UUID.randomUUID().toString() + System.nanoTime())
-                .addLong("timestamp", System.currentTimeMillis()) // Sử dụng timestamp để đảm bảo không trùng
+                .addLong("timestamp", System.currentTimeMillis())
                 .toJobParameters();
     }
 }

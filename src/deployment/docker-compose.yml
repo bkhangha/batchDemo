@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  oraclelinux:
+    image: gvenzl/oracle-xe:latest
+    container_name: oraclelinux
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_DATABASE=oraclelinux
+      - ORACLE_USER=oraclelocal
+      - ORACLE_PASSWORD=123456
+      - ORACLE_ALLOW_REMOTE=true
+    volumes:
+      - C:\Users\bkhan\Downloads\oracle\oracle_data:/opt/oracle/oradata
